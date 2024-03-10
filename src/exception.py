@@ -1,5 +1,5 @@
 import sys
-import logging
+from src.logger import logging
 
 
 logging.basicConfig(level=logging.INFO)
@@ -34,10 +34,3 @@ class CustomException(Exception):
         Return the error message as a string representation of the object.
         """
         return self.error_message
-
-if __name__ == "__main__":
-    try:
-        a = 1 / 0
-    except Exception as e:
-        logging.error("Divide by zero error")
-        raise CustomException(e, sys)
